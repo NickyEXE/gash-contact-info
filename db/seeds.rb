@@ -41,14 +41,16 @@ service = Google::Apis::SheetsV4::SheetsService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
+# Create Skills
 skills = ["Video Editing", "Image Editing", "Puzzles", "Cryptography", "Writing", "Costuming", "Arts", "Crafts", "Performance", "Singing", "Musical Instrument", "Cooking", "Mixology", "Programming/Development", "Data Science", "Feats of Physical Strength/Endurance", "Gaming", "Tabletop RPGs"]
 skills.each{|skill| Skill.create(name: skill)}
 
-# Grabs and Creates users
+# Grab and Create Scavvies
 # https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-spreadsheet_id = "1Sa5dg_qANeY4r2cy_2tsVNrToXeq9B2wNXHSv27_MKA"
-range = "Inventory!A2:F"
-response = service.get_spreadsheet_values spreadsheet_id, range
-response.values.each do |row|
-  Ingredient.create(name: row[0], quantity: row[1], container: row[2], kind: row[3], sub_kind: row[4], perishable: row[5])
-end
+# spreadsheet_id = "1Sa5dg_qANeY4r2cy_2tsVNrToXeq9B2wNXHSv27_MKA"
+# range = "Inventory!A2:F"
+# response = service.get_spreadsheet_values spreadsheet_id, range
+# byebug
+# response.values.each do |row|
+#   Ingredient.create(name: row[0], quantity: row[1], container: row[2], kind: row[3], sub_kind: row[4], perishable: row[5])
+# end
