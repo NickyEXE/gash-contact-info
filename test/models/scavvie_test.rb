@@ -30,7 +30,7 @@ class ScavvieTest < ActiveSupport::TestCase
   test "Scavvie can associate skills from a list of skills" do
     skills = ["Video Editing", "Image Editing", "Puzzles"]
     skills.each{|skill| Skill.create(name: skill)}
-    scavvie = Scavvie.create(name: "Nicky", pronouns: "He/Him", email: "dovern42", phone: "666-666-6666", location: "NYC", skill_description: "Very", czar_interest: "Yes", about: "batman", yearbook_quote: "Batman", image_url: "batman.com")
+    scavvie = Scavvie.create(name: "Nicky", pronouns: "He/Him", email: "dovern42", phone: "666-666-6666", location: "NYC", software: "Video Editing, Photo Editing", skill_description: "Very", czar_interest: "Yes", about: "batman", yearbook_quote: "Batman", image_url: "batman.com")
     scavvie.skills_from_string("Video Editing, Image Editing")
     assert scavvie.skills.length === 2
   end
