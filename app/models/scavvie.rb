@@ -12,7 +12,7 @@ class Scavvie < ApplicationRecord
         keys = ["name", "pronouns", "email", "phone", "location", "skills", "skill_description", "software", "czar_interest", "yearbook_quote", "about"]
         hash = Hash[keys.zip(arr)]
         hash["image_url"] = self.get_an_image
-        scavvie = Scavvie.create(hash.except("skills", "software"))
+        scavvie = Scavvie.create(hash.except("skills"))
         scavvie.skills_from_string(hash["skills"])
         scavvie
     end
