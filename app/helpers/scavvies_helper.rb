@@ -1,0 +1,2 @@
+module ScavviesHelper
+end

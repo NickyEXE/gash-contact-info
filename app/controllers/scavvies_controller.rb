@@ -1,0 +1,2 @@
+class ScavviesController < ApplicationController
+end
