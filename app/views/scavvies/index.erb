@@ -1,1 +1,6 @@
-<h1>Hello Scav</h1>
+<h1>Meet Your Scavvies!</h1>
+<ul>
+<% @scavvies.each do |scavvie| %>
+    <li><%=link_to scavvie.name, scavvie%></li>
+<% end%>
+</ul>

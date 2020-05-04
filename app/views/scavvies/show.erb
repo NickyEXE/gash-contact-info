@@ -1,0 +1,16 @@
+<center>
+<img src=<%= @scavvie.image_url %> alt="Picture of a dog" height="40%">
+<h1><%= @scavvie.name + " (#{@scavvie.pronouns})" %></h1>
+<i><%= @scavvie.yearbook_quote %></i><br/>
+<%= @scavvie.location %><br/>
+<h3><%= @scavvie.email + " | " + @scavvie.phone%> </h3>
+<%= @scavvie.about %><br/>
+<% if @scavvie.software%>
+    Software: <%= @scavvie.software %>
+<% end%>
+<h3>Relevant Skills:</h3>
+<% @scavvie.skills.each do |skill|%>
+    <p><%= skill.name %></p>
+<% end%>
+<p><%= @scavvie.skill_description %></p>
+</center>
